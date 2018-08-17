@@ -28,6 +28,9 @@ public class WebShopServlet extends HttpServlet {
                                      new Item("Hot Dog Slicer", 15.0),
                                      new Item("Java Cookbook", 25.0),
                                      new Item("I have no creativity for this shit", 1.99)};
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         StringBuilder sb = new StringBuilder();
         for (Item item : itemsAvailable) {
             sb.append("<div>");
@@ -46,9 +49,7 @@ public class WebShopServlet extends HttpServlet {
             sb.append("</div>");
         }
         items = sb.toString();
-    }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         PrintWriter out = response.getWriter();
 
         String item = request.getParameter("item");

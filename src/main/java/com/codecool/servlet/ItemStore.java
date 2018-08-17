@@ -14,6 +14,10 @@ public class ItemStore {
         items.remove(item);
     }
 
+    static List<Item> getItems() {
+        return items;
+    }
+
     static Item get(int index) {
         return items.get(index);
     }
